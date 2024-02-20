@@ -1,9 +1,9 @@
-# LAB - Class 31
+# LAB - Class 32
 
-## Project: Django-REST
+## Project: drf-api-permissions-postgres
 
 ### Author: Errol Vidad
-V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/django-REST/pull/1)
+V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/drf-api-permissions-postgres/pull/1)
 
 ### Links and Resources
 - Back-end server url (when applicable): None
@@ -14,21 +14,23 @@ V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/django-REST/pull/1)
 
 i.e.
 
-- PORT - Port Number: None
-- DATABASE_URL - URL to the running Postgres instance/db: None
+- PORT - Port Number: 8000
+- DATABASE_URL - postgres://USER:PASSWORD@db:5432/DBNAME
 
 ### How to initialize/run your application (where applicable)
 
-- CD into Django-REST directory
-- Run the command: docker build -t django_companies_project .
-- Run the command: docker-compose up --build
-- In the web browser, navigate to http://localhost:8000/api/v1/companies/
+- git clone https://github.com/Code-Fellows-School-Work/drf-api-permissions-postgres.git
+- cd drf-api-permissions-postgres
+- Run the command: docker build -t django_doggos_project .
+- Run the command: docker compose up --build
+- In the web browser, navigate to http://localhost:8000/api/v1/doggos/
 
 ### How to use your library (where applicable)
 ### Tests
 How do you run tests?
 
-- run python manage.py test
+- docker exec -it <container_name_or_id> python manage.py test
+
 
 
 
