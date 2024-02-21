@@ -3,7 +3,7 @@
 ## Project: drf-api-permissions-postgres
 
 ### Author: Errol Vidad
-V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/drf-auth/pull/2)
+V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/drf-auth/pull/1)
 
 ### Links and Resources
 - Back-end server url (when applicable): None
