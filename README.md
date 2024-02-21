@@ -1,6 +1,6 @@
 # LAB - Class 33
 
-## Project: drf-api-permissions-postgres
+## Project: drf-auth
 
 ### Author: Errol Vidad
 V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/drf-auth/pull/1)
