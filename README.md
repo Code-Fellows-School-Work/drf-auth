@@ -2,12 +2,12 @@
 
 ## Project: drf-auth
 
-### Author: Errol Vidad
-V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/drf-auth/pull/1)
+### Author: Anthony R, Dillion T Errol V
+V.1.0.0
 
 ### Links and Resources
-- Back-end server url (when applicable): None
-- Front-end application (when applicable): None
+- Back-end server url: http://localhost:8000
+- Front-end application : None
 
 ### Setup
 - Install Docker
@@ -16,15 +16,16 @@ V.1.0.0 (Pr: https://github.com/Code-Fellows-School-Work/drf-auth/pull/1)
 i.e.
 
 - PORT - Port Number: 8000
-- DATABASE_URL - None
+- DATABASE_URL - None (using default SQLite database)
 
 ### How to initialize/run your application (where applicable)
 
 - git clone https://github.com/Code-Fellows-School-Work/drf-auth
-- cd drf-auth
-- Run the command: docker build -t django_doggos_project .
+- cd kakeibo-financial-app
+- Run the command: docker build -t django_project .
 - Run the command: docker compose up --build
-- In the web browser, navigate to http://localhost:8000/api/v1/doggos/
+- Run the command: docker compose run web python manage.py createsuperuser
+- In the web browser, navigate to http://localhost:8000/admin/
 
 ### How to use your library (where applicable)
 
@@ -43,18 +44,90 @@ i.e.
         - Click send and copy access token
 
 - CRUD Routes:
-    - [Admin](http://localhost:8000/admin/)
-        - Admin panel
-    - [Doggo List](http://localhost:8000/api/v1/doggos/)
-        - Review list of all doggos
-    - [Doggo Detail](http://localhost:8000/api/v1/doggos/<int>)
-        - Review detailed info of selected doggo
-        - Readonly access for non-owners
-        - Edit and delete access for owner
-    - [Token Access](http://localhost:8000/api/token/)
-        - Provides authenticated users an access and refresh token
-    - [Token Refresh](http://localhost:8000/api/token/refresh/)
-        - Provides authenticated users a new access token if current access token expired
+    Certainly! Here’s the API endpoints section in plain Markdown, ready for copying:
+
+---
+
+### API Endpoints
+
+Certainly! Here’s the API endpoints section in plain Markdown, ready for copying:
+
+---
+
+### API Endpoints
+
+#### Admin Panel
+- **URL**: [http://localhost:8000/admin/](http://localhost:8000/admin/)  
+  Access the Django admin interface.
+
+#### Transaction Endpoints
+- **List All Transactions**
+  - **Method**: `GET`
+  - **URL**: `/api/v1/kakeibo/transactions/`
+
+- **Create a Transaction**
+  - **Method**: `POST`
+  - **URL**: `/api/v1/kakeibo/transactions/`
+  - **Body** (JSON):
+    ```json
+    {
+      "owner": "user_id",
+      "category": "INCOME/ESSENTIAL/WANTS/SAVINGS/OTHER",
+      "description": "Transaction description",
+      "amount": 100.00,
+      "transaction_date": "YYYY-MM-DD"
+    }
+    ```
+
+- **Transaction Detail**
+  - **Method**: `GET`, `PUT`, `DELETE`
+  - **URL**: `/api/v1/kakeibo/transactions/<int:id>/`
+  - **Description**: View, update, or delete a transaction. Update and delete actions are restricted to the owner.
+
+#### Budget Endpoints
+- **List All Budgets**
+  - **Method**: `GET`
+  - **URL**: `/api/v1/kakeibo/budgets/`
+
+- **Create a Budget**
+  - **Method**: `POST`
+  - **URL**: `/api/v1/kakeibo/budgets/`
+  - **Body** (JSON):
+    ```json
+    {
+      "owner": "user_id",
+      "month": "Month name or identifier",
+      "income_goal": 5000.00,
+      "savings_goal": 1000.00
+    }
+    ```
+
+- **Budget Detail**
+  - **Method**: `GET`, `PUT`, `DELETE`
+  - **URL**: `/api/v1/kakeibo/budgets/<int:id>/`
+  - **Description**: View, update, or delete a budget. Update and delete actions are restricted to the owner.
+
+#### Authentication Endpoints
+- **Token Access**
+  - **Method**: `POST`
+  - **URL**: `/api/token/`
+  - **Body** (JSON):
+    ```json
+    {
+      "username": "your_username",
+      "password": "your_password"
+    }
+    ```
+
+- **Token Refresh**
+  - **Method**: `POST`
+  - **URL**: `/api/token/refresh/`
+  - **Body** (JSON):
+    ```json
+    {
+      "refresh": "your_refresh_token"
+    }
+    ```
 
 
 
@@ -63,3 +136,6 @@ i.e.
 
 
 
+
+
+# CSC605
